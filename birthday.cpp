@@ -45,7 +45,6 @@ int main() {
 
 	cin >> numOfPeople;
 
-	probCalc(numOfPeople, prob);
 
 	cout << "Probability that there are no one shares ";
 	cout << "a birthday: " << prob << endl;
