@@ -43,7 +43,6 @@ int main() {
 	cout << "Please enter the number of people";
 	cout << " in the room: ";
 
-	cin >> numOfPeople;
 
 	cout << "Probability that there are no one shares ";
 	cout << "a birthday: " << prob << endl;
