@@ -20,8 +20,7 @@ int main() {
 		
 	while (!quit) {
 		cout << "Option: ";
-		cin.get(input, MAX_CHAR);
-		cin.ignore(MAX_CHAR, '\n');	
+		cin >> input;
 		for (int i = 0; i < strlen(input); i++) {
 			input[i] = toupper(input[i]);
 		}
@@ -32,26 +31,22 @@ int main() {
 		else if (strcmp(input, "2") == 0) {
 			prob = 1 - probCalc(numOfPeople, prob);
 		}
-		else {
-			cout << "Please enter 1, 2, or QUIT"
+		else if (strcmp(input, "HELP") == 0) {
+			displayInstruct();
 		}
-
-	cout << "This program calculates the probablity";
-	cout << " that there are NO overlapping birthdays";
-	cout << " given a certain number of people in a";
-	cout << " room." << endl;
-	cout << "Please enter the number of people";
-	cout << " in the room: ";
-
-
-	cout << "Probability that there are no one shares ";
-	cout << "a birthday: " << prob << endl;
-
+		else if (strcmp(input, "QUIT") == 0) {
+			quit = true;
+		}
+		else {
+			cout << "Please enter 1, 2, or QUIT";
+		}
+		cout << "Probability that there are no one shares ";
+		cout << "a birthday: " << prob << endl;
+	}
 	return 0;
 }
 
-float probCalc(int numOfPeople) {
-	int numOfPeople = 0;
+float probCalc(int numOfPeople, float prob) {
 	cout << "Enter the number of people in the room: ";
 	cin >> numOfPeople;
 	for (float i = NUM_OF_DAYS; i > NUM_OF_DAYS - numOfPeople; i--) {
